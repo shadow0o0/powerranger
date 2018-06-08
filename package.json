@@ -10,8 +10,7 @@
     "node": "8.0.0"
   },
   "dependencies": {
-    "discord.js": "*",
-    "discordjs": "discordjs/discord.js",
+    "discord.js": "11.3.2",
     "express": "*"
   }
 }
