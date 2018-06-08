@@ -83,7 +83,7 @@ if(oldMember.voiceChannel.name === newMember.user.username){
 
 
 bot.on('channelUpdate', async  (oldChannel, newChannel) => {
-
+  let guild = bot.guilds.get("420638696258404362");
        const entry = await guild.fetchAuditLogs({type: 'CHANNEL_UPDATE'}).then(audit => audit.entries.first())
        let user = ""
 
