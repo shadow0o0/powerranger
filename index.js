@@ -81,6 +81,20 @@ if(oldMember.voiceChannel.name === newMember.user.username){
   }
 })
 
+
+bot.on('channelUpdate', async  (oldChannel, newChannel) => {
+
+       const entry = await guild.fetchAuditLogs({type: 'CHANNEL_UPDATE'}).then(audit => audit.entries.first())
+       let user = ""
+
+    user = entry.executor
+    if(oldMember.voiceChannel.parentID === '454474664681537538'){
+      newChannel.setName(user.username)
+
+    }
+
+})
+
 bot.on("message", async message => {
 if (message.author.bot) return;
 if (message.channel.type ==="dm") return;
