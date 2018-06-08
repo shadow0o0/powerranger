@@ -88,7 +88,8 @@ bot.on('channelUpdate', async  (oldChannel, newChannel) => {
        let user = ""
 
     user = entry.executor
-    if(oldMember.voiceChannel.parentID === '454474664681537538'){
+    if(oldChannel || newChannel === '454474664681537538'){
+      if(newChannel.name !== oldChannel.name)
       newChannel.setName(user.username)
 
     }
