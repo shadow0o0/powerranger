@@ -63,7 +63,7 @@ if(oldMember.voiceChannel.name === newMember.user.username){
   if(oldMember.voiceChannel.parentID === '454778578270420993'){
      bot.setTimeout(() =>{
          oldMember.voiceChannel.delete()
-         guild.channels.find("id",`455001630258233354`).overwritePermissions(oldMember.user, {})
+         guild.channels.find("id",`455001630258233354`).overwritePermissions(oldMember.user, {CONNECT: true})
     }, 3000)
   }
         
@@ -73,7 +73,7 @@ if(oldMember.voiceChannel.name === newMember.user.username){
   if(oldMember.voiceChannel.parentID === '454778578270420993' && oldMember.voiceChannel.id !== '455001630258233354' && oldMember.voiceChannel.name === newMember.user.username){
     bot.setTimeout(() =>{
          oldMember.voiceChannel.delete()
-         guild.channels.find("id",`455001630258233354`).overwritePermissions(oldMember.user, {})
+         guild.channels.find("id",`455001630258233354`).overwritePermissions(oldMember.user, {CONNECT: true})
     }, 3000)
   }
         
