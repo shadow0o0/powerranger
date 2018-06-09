@@ -44,7 +44,7 @@ bot.on("ready", async () => {
 });
 
 bot.on('voiceStateUpdate',async (oldMember, newMember) => {
-    let guild = bot.guilds.get("420638696258404362");
+    let guild = bot.guilds.get("358330224984719370");
 let newUserChannel = newMember.voiceChannel
 let oldUserChannel = oldMember.voiceChannel
 
