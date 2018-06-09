@@ -89,7 +89,11 @@ bot.on('channelUpdate', async  (oldChannel, newChannel) => {
   if(newChannel.name !== oldChannel.name){
 
     if(oldChannel.parentID === '454778578270420993' || newChannel.parentID === '454778578270420993'){
-      
+          const entry = await guild.fetchAuditLogs({type: 'CHANNEL_UPDATE'}).then(audit => audit.entries.first() )
+      let user = ""
+
+    user = entry.executor
+    if(user.bot)return;
      return newChannel.setName(oldChannel.name)
 
     }
