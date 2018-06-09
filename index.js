@@ -44,20 +44,19 @@ bot.on("ready", async () => {
 });
 
 bot.on('voiceStateUpdate',async (oldMember, newMember) => {
-    let guild = bot.guilds.get("358330224984719370");
+    let guild = bot.guilds.get("420638696258404362");
 let newUserChannel = newMember.voiceChannel
 let oldUserChannel = oldMember.voiceChannel
 
 if(oldUserChannel === undefined && newUserChannel !== undefined) {
+
     if(newMember.voiceChannel.id === '454778639448408086'){
 
-      await guild.createChannel(`${newMember.user.username}`,'voice').then(async (m)  => await m.overwritePermissions(newMember.user, {MANAGE_CHANNELS: true})).then(async (m)  => await m.setParent('454778578270420993')).then( async (m)  => await guild.members.get(newMember.user.id).setVoiceChannel(m)).then(async (m)=> {if(newUserChannel.id === m.id){
-
-      }})
+      await guild.createChannel(`${newMember.user.username}`,'voice').then(async (m)  => await m.overwritePermissions(newMember.user, {MANAGE_CHANNELS: true})).then(async (m)  => await m.setParent('454778578270420993')).then( async (m)  => await guild.members.get(newMember.user.id).setVoiceChannel(m))
       guild.channels.find("id",`454778639448408086`).overwritePermissions(oldMember.user, {CONNECT: false})
     }
 
-} else if(newUserChannel === undefined){
+}if(newUserChannel === undefined){
 
 if(oldMember.voiceChannel.name === newMember.user.username){
   
@@ -68,16 +67,17 @@ if(oldMember.voiceChannel.name === newMember.user.username){
   }
         guild.channels.find("id",`454778639448408086`).overwritePermissions(oldMember.user, {CONNECT: true})
 }
-}else if(oldMember.voiceChannel.name === newMember.user.username){
+}if(oldMember.voiceChannel.name !== newMember.voiceChannel.name){
   
-  if(oldMember.voiceChannel.parentID === '454778578270420993'){
+  if(oldMember.voiceChannel.parentID === '454778578270420993' && oldMember.voiceChannel.id !== '454778639448408086' && oldMember.voiceChannel.name === newMember.user.username){
     bot.setTimeout(() =>{
          oldMember.voiceChannel.delete()
     }, 3000)
   }
         guild.channels.find("id",`454778639448408086`).overwritePermissions(oldMember.user, {CONNECT: true})
         }
-  else if(newUserChannel.id === '454778639448408086'){
+  if(newMember.voiceChannel.id === '454778639448408086'){
+
    await guild.createChannel(`${newMember.user.username}`,'voice').then(async (m)  => await m.overwritePermissions(newMember.user, {MANAGE_CHANNELS: true})).then(async (m)  => await m.setParent('454778578270420993')).then( async (m)  => await guild.members.get(newMember.user.id).setVoiceChannel(m))
     guild.channels.find("id",`454778639448408086`).overwritePermissions(oldMember.user, {CONNECT: false})
   }
@@ -85,18 +85,19 @@ if(oldMember.voiceChannel.name === newMember.user.username){
 
 
 //bot.on('channelUpdate', async  (oldChannel, newChannel) => {
-//  let guild = bot.guilds.get("420638696258404362");
-  //     const entry = await guild.fetchAuditLogs({type: 'CHANNEL_UPDATE'}).then(audit => audit.entries.first())
-   //    let user = ""
+ // let guild = bot.guilds.get("420638696258404362");
+    //   const entry = await guild.fetchAuditLogs({type: 'CHANNEL_UPDATE'}).then(audit => audit.entries.first() )
+  //     let user = ""
 
   //  user = entry.executor
-  //  if(oldChannel.parentID || newChannel.parentID === '454474664681537538'){
-    //  if(newChannel.name !== oldChannel.name)
-    //  if(user.bot)return;
-    // return newChannel.setName(user.username)
 
-   // }
+ //   if(oldChannel.parentID || newChannel.parentID === '454778578270420993'){
+   //  if(newChannel.name !== oldChannel.name)
+      
+   //  return newChannel.setName(user.username)
 
+  //  }
+//
 //})
 
 bot.on("message", async message => {
