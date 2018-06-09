@@ -50,10 +50,10 @@ let oldUserChannel = oldMember.voiceChannel
 
 if(oldUserChannel === undefined && newUserChannel !== undefined) {
 
-    if(newMember.voiceChannel.id === '454778639448408086'){
+    if(newMember.voiceChannel.id === '455001630258233354'){
 
       await guild.createChannel(`${newMember.user.username}`,'voice').then(async (m)  => await m.overwritePermissions(newMember.user, {MANAGE_CHANNELS: true})).then(async (m)  => await m.setParent('454778578270420993')).then( async (m)  => await guild.members.get(newMember.user.id).setVoiceChannel(m))
-      guild.channels.find("id",`454778639448408086`).overwritePermissions(oldMember.user, {CONNECT: false})
+      guild.channels.find("id",`455001630258233354`).overwritePermissions(oldMember.user, {CONNECT: false})
     }
 
 }if(newUserChannel === undefined){
@@ -65,21 +65,21 @@ if(oldMember.voiceChannel.name === newMember.user.username){
          oldMember.voiceChannel.delete()
     }, 3000)
   }
-        guild.channels.find("id",`454778639448408086`).overwritePermissions(oldMember.user, {})
+        guild.channels.find("id",`455001630258233354`).overwritePermissions(oldMember.user, {CONNECT: true})
 }
 }if(oldMember.voiceChannel.name !== newMember.voiceChannel.name){
   
-  if(oldMember.voiceChannel.parentID === '454778578270420993' && oldMember.voiceChannel.id !== '454778639448408086' && oldMember.voiceChannel.name === newMember.user.username){
+  if(oldMember.voiceChannel.parentID === '454778578270420993' && oldMember.voiceChannel.id !== '455001630258233354' && oldMember.voiceChannel.name === newMember.user.username){
     bot.setTimeout(() =>{
          oldMember.voiceChannel.delete()
     }, 3000)
   }
-        guild.channels.find("id",`454778639448408086`).overwritePermissions(oldMember.user, {})
+        guild.channels.find("id",`455001630258233354`).overwritePermissions(oldMember.user, {CONNECT: true})
         }
-  if(newMember.voiceChannel.id === '454778639448408086'){
+  if(newMember.voiceChannel.id === '455001630258233354'){
 
    await guild.createChannel(`${newMember.user.username}`,'voice').then(async (m)  => await m.overwritePermissions(newMember.user, {MANAGE_CHANNELS: true})).then(async (m)  => await m.setParent('454778578270420993')).then( async (m)  => await guild.members.get(newMember.user.id).setVoiceChannel(m))
-    guild.channels.find("id",`454778639448408086`).overwritePermissions(oldMember.user, {CONNECT: false})
+    guild.channels.find("id",`455001630258233354`).overwritePermissions(oldMember.user, {CONNECT: false})
   }
 })
 
