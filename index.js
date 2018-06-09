@@ -84,21 +84,17 @@ if(oldMember.voiceChannel.name === newMember.user.username){
 })
 
 
-//bot.on('channelUpdate', async  (oldChannel, newChannel) => {
- // let guild = bot.guilds.get("420638696258404362");
-    //   const entry = await guild.fetchAuditLogs({type: 'CHANNEL_UPDATE'}).then(audit => audit.entries.first() )
-  //     let user = ""
+bot.on('channelUpdate', async  (oldChannel, newChannel) => {
+  let guild = bot.guilds.get("358330224984719370");
+  if(newChannel.name !== oldChannel.name){
 
-  //  user = entry.executor
-
- //   if(oldChannel.parentID || newChannel.parentID === '454778578270420993'){
-   //  if(newChannel.name !== oldChannel.name)
+    if(oldChannel.parentID === '454778578270420993' || newChannel.parentID === '454778578270420993'){
       
-   //  return newChannel.setName(user.username)
+     return newChannel.setName(oldChannel.name)
 
-  //  }
-//
-//})
+    }
+}
+})
 
 bot.on("message", async message => {
 if (message.author.bot) return;
