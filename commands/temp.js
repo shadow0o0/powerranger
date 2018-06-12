@@ -1,16 +1,12 @@
 
 const Discord = require("discord.js");
-let gameon = false;
+
 module.exports.run = async (bot, message, args,sql) => {
 let vchannel
 let vcat
 let guildid
     if(!message.guild.member(message.author).hasPermission("ADMINISTRATOR")) return;
-  if(gameon === false){
-    gameon = true
-  }else{
-   gameon = false 
-  }
+
 
     let rows = sql.prepare(`SELECT * FROM guilds WHERE guildID = '${message.guild.id}'`).get()
     if (!rows){
@@ -82,13 +78,9 @@ let guildid
         }
     }
     })
-  if(gameon === true){
-    
+
     message.channel.send("Temprary channel is on");
-  }else{
-   await message.channel.send("Temprary channel is off");
-    process.exit(1);
-  }
+
 }
 
 module.exports.help = {
