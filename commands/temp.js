@@ -11,6 +11,7 @@ let guildid
   }else{
    gameon = false 
   }
+
     let rows = sql.prepare(`SELECT * FROM guilds WHERE guildID = '${message.guild.id}'`).get()
     if (!rows){
     return message.channel.send("Please set main category and temprary channel names first: `#setcat` , `#setchannel`")
@@ -23,9 +24,9 @@ let guildid
       if(!category)return message.channel.send("Please set a temprary voice channel category with `#setcat`")
       guildid = rows.guildID
     }
-    
+
     bot.on('voiceStateUpdate',async (oldMember, newMember) => {
-    if(gameon === false) return;
+
         let guild = bot.guilds.get(guildid)
     let newUserChannel = newMember.voiceChannel
     let oldUserChannel = oldMember.voiceChannel
@@ -65,7 +66,6 @@ let guildid
     
     
     bot.on('channelUpdate', async  (oldChannel, newChannel) => {
-      if(gameon === false) return;
       let guild = bot.guilds.get(guildid)
       let channel = guild.channels.find("name", vchannel)
       let category =guild.channels.find("name", vcat)
@@ -86,7 +86,8 @@ let guildid
     
     message.channel.send("Temprary channel is on");
   }else{
-    message.channel.send("Temprary channel is off");
+   await message.channel.send("Temprary channel is off");
+    process.exit(1);
   }
 }
 
