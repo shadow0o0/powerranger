@@ -31,6 +31,7 @@
     "better-sqlite3": "*",
     "request": "^2.85.0",
     "text2png": "*",
-    "pretty-ms": "*"
+    "pretty-ms": "*",
+    "canvas-prebuilt": "*"
   }
 }
