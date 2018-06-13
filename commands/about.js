@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 let bg = require("../bg.json");
 let wesam = require("../wesam.json");
-var Canvas = require('canvas')
+var Canvas = require('canvas-prebuilt')
 var jimp = require('jimp')
 const fs = require('fs');
 const talkedRecently = new Set();

@@ -1,6 +1,6 @@
 const {Discord, MessageAttachment} = require("discord.js");
 var Jimp = require("jimp");
-var Canvas = require('canvas')
+var Canvas = require('canvas-prebuilt')
 const fs = require('fs');
 module.exports.run = async (bot, message, args, sql) => {
 

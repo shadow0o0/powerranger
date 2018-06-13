@@ -1,7 +1,7 @@
 const {Discord, MessageAttachment} = require("discord.js");
 let bg = require("../bg.json");
 var Jimp = require("jimp");
-var Canvas = require('canvas')
+var Canvas = require('canvas-prebuilt')
 const fs = require('fs');
 module.exports.run = async (bot, message, args, sql) => {
   let rows = sql.prepare(`SELECT * FROM profile WHERE UserID = '${message.author.id}'`).get()
