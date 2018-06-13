@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     .setImage(message.guild.iconURL);
    await bot.user.setAvatar(message.guild.iconURL); 
       
-     message.channel.send(botAvatar);
+     message.channel.send(botAvatar).then(msg => {msg.delete(5000)});
       
     
     message.delete();
@@ -26,12 +26,12 @@ module.exports.run = async (bot, message, args) => {
     .setImage(imgURL);
     await bot.user.setAvatar(imgURL);
   
-     message.channel.send(botAvatar);
+     message.channel.send(botAvatar).then(msg => {msg.delete(5000)});
   
  
   message.delete();
 }
 
 module.exports.help = {
-  name:"chavatar"
+  name:"proavatar"
 }
