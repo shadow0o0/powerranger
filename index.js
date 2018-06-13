@@ -44,7 +44,7 @@ fs.readdir("./others/", (err, files) => {
 bot.on("ready", async () => {
   bot.user.setUsername("بروفايل");
   console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
-  bot.user.setActivity('Wings | #شرح', {type: "PLAYING"});
+  bot.user.setActivity('#شرح', {type: "PLAYING"});
   const profile = sql.prepare("SELECT count(*) FROM sqlite_master WHERE type='table' AND name = 'profile';").get();
   if (!profile['count(*)']) {
     // If the table isn't there, create it and setup the database correctly.
