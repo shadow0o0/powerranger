@@ -1,47 +1,39 @@
 {
-  "name": "discord-token-generator",
+  "name": "gboty",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "node index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "webpack --progress --watch"
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "8.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/orels1/discord-token-generator.git"
+    "url": "git+https://github.com/shadow0o0/gboty.git"
   },
-  "keywords": [
-    "nodejs",
-    "react",
-    "discord"
-  ],
-  "author": "orels1",
+  "author": "GarZ",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/orels1/discord-token-generator/issues"
+    "url": "https://github.com/shadow0o0/gboty/issues"
   },
-  "devDependencies": {
-    "babel-core": "^6.24.1",
-    "babel-eslint": "^7.2.2",
-    "babel-loader": "^7.0.0",
-    "babel-preset-env": "^1.4.0",
-    "babel-preset-react": "^6.24.1",
-    "css-loader": "^0.28.1",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3",
-    "extract-text-webpack-plugin": "^2.1.0",
-    "webpack": "^2.5.1"
-  },
-  "homepage": "https://github.com/orels1/discord-token-generator#readme",
+  "homepage": "https://github.com/shadow0o0/gboty#readme",
   "dependencies": {
-    "btoa": "^1.1.2",
-    "express": "^4.15.2",
-    "node-fetch": "^1.6.3",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "dateformat": "^3.0.3",
+    "discord.js": "^11.3.2",
+    "express": "^4.16.3",
+    "got": "^8.3.0",
+    "http": "^0.0.0",
+    "jimp": "^0.2.28",
+    "ms": "^2.1.1",
+    "better-sqlite3": "*",
+    "request": "^2.85.0",
+    "text2png": "*",
+    "pretty-ms": "*",
+    "ascii-data-table": "*",
+    "moment": "*",
+    "path": "*"
   }
 }
