@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
       let botAvatar = new Discord.RichEmbed()
     .setAuthor(message.author.username, message.author.displayAvatarURL)
     .setColor("#C2C2C2")
-    .addField("✔ [Bot avatar changed successfully]", '!!')
+    .addField("✔ [تم تغيير صورة البوت بنجاح]", '!!')
     .setImage(message.guild.iconURL);
    await bot.user.setAvatar(message.guild.iconURL); 
       
@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
   let botAvatar = new Discord.RichEmbed()
     .setAuthor(message.author.username, message.author.displayAvatarURL)
     .setColor("#C2C2C2")
-    .addField("✔ [Bot avatar changed successfully]", '!!')
+    .addField("✔ [تم تغيير صورة البوت بنجاح]", '!!')
     .setImage(imgURL);
     await bot.user.setAvatar(imgURL);
   
@@ -33,5 +33,5 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-  name:"#proavatar"
+  name:"proavatar"
 }

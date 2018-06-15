@@ -1,29 +1,35 @@
-const {Discord, MessageAttachment} = require("discord.js");
-var Jimp = require("jimp");
-var Canvas = require('canvas')
-const fs = require('fs');
-module.exports.run = async (bot, message, args, sql) => {
+const Discord = require("discord.js");
+const talkedRecently = new Set();
+module.exports.run = async (bot, message, args) => {
 
-  let Image = Canvas.Image,
-  canvas = new Canvas(600, 400),
-  ctx = canvas.getContext('2d');
-      ctx.patternQuality = 'bilinear';
-      ctx.filter = 'bilinear';
-      ctx.antialias = 'subpixel';
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
-      ctx.shadowOffsetY = 2;
-      ctx.shadowBlur = 2;
-fs.readFile("./img/help.png", function (err, Background) {
-  if (err) return console.log(err);
-  let ground = new Image;
-  ground.src = Background;
-  ctx.drawImage(ground, 0, 0, 600, 400);
-
-        message.channel.send({files: [canvas.toBuffer()]});
-
-});
-
-        }
+  if (talkedRecently.has(message.author.id)) {
+            
+    let timeoute = new Discord.RichEmbed()
+    .setColor("RANDOM")
+    .setTitle("إنتظر 60 ثانية");
+            message.channel.send(timeoute).then(msg => {msg.delete(5000)});
+    } else {
+      message.delete(2000)
+    let helpembed1 = new Discord.RichEmbed()
+    .setAuthor(bot.user.username, bot.user.displayAvatarURL)
+    .setDescription("~ أوامر بوت البروفايل ~")
+    .setColor("RANDOM")
+    
+    .addField("#بروفايل", '● [لعرض البروفايل الخاص]')
+    .addField("#متجر", '● [لعرض متجر الخلفيات]')
+    .addField("#شراء", '● [لشراء خلفية من المتجر 100 ريال]')
+    .addField("#نوت", '● [لكتابة كلام في خانة المعلومات 200 ريال]')
+    .addField("#لايك", '● [للإعجاب بشخص داخل السيرفر كل 12 ساعة]')
+    .addField("#تحويل", '● [تحويل مبلغ مالي لأحد الأعضاء]')
+    .setFooter(`@${message.author.username} :المرسل`, message.author.displayAvatarURL);
+    message.channel.send(helpembed1);
+    }
+  talkedRecently.add(message.author.id);
+        setTimeout(() => {
+          // Removes the user from the set after a minute
+          talkedRecently.delete(message.author.id);
+        }, 60000);
+}
 module.exports.help = {
-  name:"#help"
+  name:"مساعدة"
 }

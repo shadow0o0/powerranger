@@ -31,9 +31,6 @@
     "better-sqlite3": "*",
     "request": "^2.85.0",
     "text2png": "*",
-    "pretty-ms": "*",
-    "ascii-data-table": "*",
-    "moment": "*",
-    "path": "*"
+    "pretty-ms": "*"
   }
 }
