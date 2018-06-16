@@ -174,8 +174,8 @@ jimp.read('./img/profileme2.png',async function (err, ava) {
                         ctx.font = '12px Arial';
                         ctx.fontSize = '12px';
                         ctx.fillStyle = "#FFFFFF";
-                        ctx.textAlign = "left";
-                        ctx.fillText(ad, 45, 275);
+                        ctx.textAlign = "center";
+                        ctx.fillText(ad, 200, 275);
                         
                         //ur name
                         ctx.font = '23px Arial';
